@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Landing_biboss</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/index.css">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="container logo">
+				<a href="#"><img src="img/logo.png"></a>
+		</div>
+		<div class="container">
+			<div class="row site justify-content-md-center">
+				<div class="col-md-12">
+					<img class="site_photo" src="img/header.png">
+				</div>
+				<div class="col-md-12 list_li">
+					<p>БИБОСС даёт возможность получить бесплатные баллы – нужно лишь разместить на сайте компании любую из ссылок:</p>
+					<ul>
+						<li>Текстовая ссылка «Франшиза <font>[Название]</font> на БИБОСС»</li>
+						<li>Текстовая ссылка «Наша франшиза на БИБОСС»</li>
+						<li>Кнопка “Нравится франшиза” + счетчик популярности</li>
+					</ul>
+					<div class="container bal_cont">
+						<p class='font-center'>Зачем нужны <a href="#">баллы</a>?<p>
+						<p class='upper font-center'>Больше баллов — выше позиция в выдаче категории</p>
+					</div>
+				</div>
+				<div class="col-md-6 list_li">
+					<p class='upper'>Правила размещения ссылки</p>
+					<ul>
+						<li>Ссылка должна быть индексируемой (без тегов <code>&lt;noindex&gt;</code> и <code>&lt;nofollow&gt;</code>)</li><br/>
+						<li>Ссылка должна быть читаемой, не скрытой от глаз посетителя сайта,</li><br/>
+						<li>Ссылка должна быть размещена на странице сайта, посвящённой франчайзингу,</li><br/>
+						<li>При размещении ссылок на другие порталы о франчайзинге – баллы обнуляются.</li><br/>
+					</ul>
+				</div>
+				<div class="col-md-6 list_li">
+					<p class='upper'>Стоимость ссылки</p><br/>
+					<font class='green_font'><strong>200 баллов</strong></font><br/>
+					ТиЦ Вашего сайта от 10<br/><br/>
+					<font class='green_font'><strong>50 баллов</strong></font><br/>
+					ТиЦ Вашего сайта от 0 до 10<br/>
+				</div>
+				<div class="col-md-12 yellow_form">
+					<p class='font-center'><strong>ПОЛУЧИТЬ ССЫЛКУ</strong></p><br/>
+					<form mthod="POST" id="form1" name="form1">
+						<div class="form-group row">
+							<label class="col-sm-4 col-form-label">Ваше имя</label>
+							<div class="col-md-6">
+								<input type="text" class="form-control" onkeyup='checkParams()' id="name" aria-describedby="basic-addon3" placeholder="Представьтесь, пожалуйста">
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="col-sm-4 col-form-label">Номер телефона</label>
+							<div class="col-md-6">
+								<input type="text" class="form-control" onkeyup='checkParams()' id="tel" aria-describedby="basic-addon3" placeholder="Для начислени баллов и связи с вами" type="tel" name="tel" pattern="8[0-9]{10}">
+							</div>
+						</div>
+						<div class="form-group row">
+							<label class="col-sm-4 col-form-label">Название франшизы</label>
+							<div class="col-md-6">
+								<input type="text" class="form-control" onkeyup='checkParams()' id="name_firm" aria-describedby="basic-addon3" placeholder="Например, Subway">
+							</div>
+						</div>
+						<p class='font-center'><input type="submit" class="btn btn-success" id='but' value='Получить ссылку' disabled></p>
+					</form>
+				</div>
+				<div class="col-md-12 last">
+					<p><strong>Это еще не все...</strong> Вы можете заработать дополнительные баллы, если разместите на своём сайте новость, интервью или статью БИБОСС о Вашей компании с активной ссылкой! 50 баллов за активную ссылку на новость!</p>
+				</div>
+				</div>
+			</div>	
+		</div>
+	</div>
+	<footer>
+		<div class="container">
+			<a href="#"><img src="img/logo_footer.png"></a>
+		</div>
+	</footer>
+	<script>
+		function checkParams() {
+		    var tel = $('#tel').val();
+		    var nfirm = $('#name_firm').val();
+		    var name = $('#name').val();
+		    
+		    if(tel.length != 0 && nfirm.length != 0 && name.length != 0) {
+		        $('#but').removeAttr('disabled');
+		    } else {
+		        $('#but').attr('disabled', 'disabled');
+		    }
+		}
+	</script>
+</body>
+</html>
